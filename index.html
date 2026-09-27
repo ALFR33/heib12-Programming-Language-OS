@@ -3,84 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>heib12 Programming Language</title>
+    <title>heib12 Programming Language Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: system-ui, -apple-system, sans-serif; }
-    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6 font-sans">
 
     <!-- Header -->
-    <header class="border-b border-slate-800 bg-slate-900/80 p-4 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-cyan-500 rounded-xl flex items-center justify-center font-bold text-slate-950 text-xl">
-                    h12
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold text-cyan-400">heib12 Language</h1>
-                    <p class="text-xs text-slate-400">Universal System & Industrial AI Language</p>
-                </div>
-            </div>
-            <a href="https://github.com" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-4 py-2 rounded-lg text-sm font-bold">
-                رفع المشروع على GitHub
-            </a>
+    <header class="border-b border-slate-800 pb-4 mb-6 flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-cyan-400">heib12 Programming Language</h1>
+            <p class="text-xs text-slate-400">Universal System & Industrial AI Language</p>
         </div>
     </header>
 
-    <!-- Main Section -->
-    <main class="max-w-6xl mx-auto px-6 py-12 flex-1">
-        <!-- Hero Banner -->
-        <div class="text-center py-12 px-6 rounded-3xl bg-slate-900 border border-slate-800 mb-12">
-            <h2 class="text-4xl font-extrabold text-white mb-4">
-                لغة البرمجة المخصصة للأنظمة الحديثة والذكاء الاصطناعي <br/>
-                <span class="text-cyan-400">heib12</span>
-            </h2>
-            <p class="text-slate-400 max-w-2xl mx-auto text-sm">
-                مصممة خصيصاً للتحكم بالسيارات الحديثة، الطائرات والدرونز، أسطول السفن، حاسبات البنوك، والمصانع.
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto space-y-6">
+        
+        <!-- About Box -->
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+            <h2 class="text-xl font-bold text-white mb-2">عن لغة heib12</h2>
+            <p class="text-sm text-slate-400 leading-relaxed">
+                لغة برمجة مخصصة ومفتوحة المصدر عالية الأداء، مصممة للتحكم في الأنظمة الحديثة والذكاء الاصطناعي، بما في ذلك السيارات الذكية، الطائرات، أسطول السفن، وحاسبات البنوك والمصانع.
             </p>
         </div>
 
-        <!-- Sample Code Preview -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-                <h3 class="text-cyan-400 font-bold mb-3">🚗 كود التحكم بالسيارات الذكية</h3>
-                <pre class="bg-slate-950 p-4 rounded-xl text-xs font-mono text-cyan-300 leading-relaxed">
+        <!-- Code Example -->
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+            <h3 class="text-lg font-bold text-cyan-400 mb-3">نموذج كود لغة heib12</h3>
+            <pre class="bg-slate-950 p-4 rounded-xl font-mono text-xs text-cyan-300 leading-relaxed overflow-x-auto">
 @target: autonomous.car
-@security: high.protection
+@security: quantum.encrypted
 
 initDriveSystem() {
-    sys.power(mode: ELECTRIC, battery: 95)
+    sys.power(mode: ELECTRIC, battery: 98.5)
     ai.think(mode: "self_drive")
 }
 
 event onObstacle(distance: Float64) {
-    if (distance < 2.5) {
+    if (distance < 3.0) {
         signal.brake(force: 100)
     }
 }</pre>
-            </div>
-
-            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-                <h3 class="text-cyan-400 font-bold mb-3">🚁 كود الطائرات والدرونز</h3>
-                <pre class="bg-slate-950 p-4 rounded-xl text-xs font-mono text-cyan-300 leading-relaxed">
-@target: avionics.drone
-@security: military.grade
-
-pulse maintainFlight() {
-    val alt = sensor.read("altitude")
-    if (alt < 150.0) {
-        signal.thrust(power: 90)
-    }
-    ai.scanTerrain()
-}</pre>
-            </div>
         </div>
-    </main>
+
+    </div>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+    <footer class="mt-12 text-center text-xs text-slate-500">
         <p>heib12 Programming Language Project © 2026</p>
     </footer>
 
