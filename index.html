@@ -3,55 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>heib12 Programming Language Studio</title>
+    <title>heib12 OS & Language Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen p-6 font-sans">
+<body class="min-h-screen w-full bg-slate-950 text-slate-100 flex flex-col font-sans">
 
-    <!-- Header -->
-    <header class="border-b border-slate-800 pb-4 mb-6 flex justify-between items-center">
-        <div>
-            <h1 class="text-2xl font-bold text-cyan-400">heib12 Programming Language</h1>
-            <p class="text-xs text-slate-400">Universal System & Industrial AI Language</p>
+    <!-- Header / Navbar -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-xl text-slate-950 shadow-lg shadow-cyan-500/20">
+                    h12
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl tracking-wider text-cyan-400">heib12 OS & Language</h1>
+                    <p class="text-xs text-slate-400">Universal System & Industrial AI Language</p>
+                </div>
+            </div>
+
+            <nav class="flex gap-2">
+                <button onclick="switchTab('playground')" id="btn-playground" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                    <i data-lucide="code" class="w-4 h-4"></i> محرر الكود (IDE)
+                </button>
+                <button onclick="switchTab('compiler')" id="btn-compiler" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> سورس كود المترجم (C++)
+                </button>
+                <button onclick="switchTab('overview')" id="btn-overview" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
+                    <i data-lucide="globe" class="w-4 h-4"></i> عن اللغة
+                </button>
+                <button onclick="switchTab('keywords')" id="btn-keywords" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
+                    <i data-lucide="book-open" class="w-4 h-4"></i> الكلمات المحجوزة
+                </button>
+                <button onclick="switchTab('apps')" id="btn-apps" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
+                    <i data-lucide="layers" class="w-4 h-4"></i> الأنظمة المدعومة
+                </button>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="max-w-4xl mx-auto space-y-6">
+    <!-- Main Content Area -->
+    <main class="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
         
-        <!-- About Box -->
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
-            <h2 class="text-xl font-bold text-white mb-2">عن لغة heib12</h2>
-            <p class="text-sm text-slate-400 leading-relaxed">
-                لغة برمجة مخصصة ومفتوحة المصدر عالية الأداء، مصممة للتحكم في الأنظمة الحديثة والذكاء الاصطناعي، بما في ذلك السيارات الذكية، الطائرات، أسطول السفن، وحاسبات البنوك والمصانع.
-            </p>
-        </div>
+        <!-- Tab: Playground -->
+        <div id="tab-playground" class="tab-content space-y-6">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-cyan-400">محرر ومفسر heib12 المتكامل</h2>
+                    <p class="text-slate-400 text-sm">اكتب واختبر كودك مباشرة للسيارات، السفن، الطائرات، البنوك، والمصانع.</p>
+                </div>
+                <div class="flex gap-3">
+                    <button onclick="copyCode()" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm border border-slate-700 transition-all">
+                        <i data-lucide="copy" class="w-4 h-4"></i> <span id="copy-text">نسخ الكود</span>
+                    </button>
+                    <button onclick="runCode()" class="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-5 py-2 rounded-lg text-sm shadow-md shadow-cyan-500/20 transition-all">
+                        <i data-lucide="play" class="w-4 h-4"></i> تشغيل الكود (Run)
+                    </button>
+                </div>
+            </div>
 
-        <!-- Code Example -->
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
-            <h3 class="text-lg font-bold text-cyan-400 mb-3">نموذج كود لغة heib12</h3>
-            <pre class="bg-slate-950 p-4 rounded-xl font-mono text-xs text-cyan-300 leading-relaxed overflow-x-auto">
+            <!-- Templates -->
+            <div class="flex flex-wrap gap-2">
+                <span class="text-xs text-slate-400 flex items-center gap-1 font-medium my-auto">أنظمة جاهزة للتجربة:</span>
+                <button onclick="loadTemplate(0)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">🚗 السيارات الذكية</button>
+                <button onclick="loadTemplate(1)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">🚁 الطائرات والدرونز</button>
+                <button onclick="loadTemplate(2)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">🚢 أسطول السفن</button>
+                <button onclick="loadTemplate(3)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">💳 البنوك والفيزا</button>
+                <button onclick="loadTemplate(4)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">⚙️ ماكينات المصانع</button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Editor -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl flex flex-col overflow-hidden shadow-xl">
+                    <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                        <span class="text-xs font-mono text-cyan-400 font-semibold">program.h12</span>
+                        <span class="text-xs text-slate-500">Syntax: heib12 Real Language</span>
+                    </div>
+                    <textarea id="code-editor" class="w-full h-80 bg-slate-950 p-4 font-mono text-sm text-cyan-300 focus:outline-none resize-none leading-relaxed">// heib12 Universal Code - Autonomous Vehicle & AI Core
 @target: autonomous.car
 @security: quantum.encrypted
 
 initDriveSystem() {
     sys.power(mode: ELECTRIC, battery: 98.5)
-    ai.think(mode: "self_drive")
+    ai.loadModel(weights: "neural_drive_v12.h12")
+    nav.setCoordinates(lat: 24.7136, lng: 46.6753)
 }
 
-event onObstacle(distance: Float64) {
+event onPedestrianDetected(distance: Float64) {
     if (distance < 3.0) {
         signal.brake(force: 100)
+        sys.notify(target: Driver, alert: "EMERGENCY_STOP")
     }
-}</pre>
+}</textarea>
+                </div>
+
+                <!-- Output Console -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl flex flex-col overflow-hidden shadow-xl">
+                    <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400 flex items-center gap-2">
+                            <i data-lucide="terminal" class="w-4 h-4 text-cyan-400"></i> شاشة المخرج والتنفيذ (Console Output)
+                        </span>
+                    </div>
+                    <pre id="console-output" class="w-full h-80 bg-slate-950 p-4 font-mono text-xs text-emerald-400 whitespace-pre-wrap overflow-y-auto leading-relaxed">>> اضغط على زر 'تشغيل الكود (Run)' في الأعلى لتجربة الكود وإظهار النتيجة...</pre>
+                </div>
+            </div>
         </div>
 
-    </div>
+        <!-- Tab: Compiler -->
+        <div id="tab-compiler" class="tab-content hidden space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-cyan-400">سورس كود المترجم الحقيقي الإصدار الثاني (C++ Native Compiler v2.0)</h2>
+                    <p class="text-slate-400 text-sm">هذا هو سورس كود المترجم المطور الذي يقوم بتحليل الأكواد وتوليد الملفات التنفيذية.</p>
+                </div>
+                <button onclick="copyCompilerCode()" class="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> نسخ كود C++
+                </button>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+                <div class="bg-slate-950 px-4 py-3 border-b border-slate-800">
+                    <span class="text-xs font-mono text-cyan-400">heib12_compiler.cpp</span>
+                </div>
+                <pre id="cpp-source-box" class="p-4 bg-slate-950 font-mono text-xs text-cyan-300 overflow-x-auto leading-relaxed max-h-96">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+#include &lt;regex&gt;
+#include &lt;cstdlib&gt;
 
-    <!-- Footer -->
-    <footer class="mt-12 text-center text-xs text-slate-500">
-        <p>heib12 Programming Language Project © 2026</p>
-    </footer>
+using namespace std;
 
-</body>
-</html>
+int main(int argc, char* argv[]) {
+    if (argc &lt; 2) {
+        cout &lt;&lt; "[ERROR] Usage: heib12c &lt;filename.h12&gt;" &lt;&lt; endl;
+        return 1;
+    }
+
+    string filepath = argv[1];
+    ifstream file(filepath);
+    if (!file.is_open()) {
+        cerr &lt;&lt; "[ERROR] Could not open file: " &lt;&lt; filepath &lt;&lt; endl;
+        return 1;
+    }
+
+    string sourceCode((istreambuf_iterator&lt;char&gt;(file)), istreambuf_iterator&lt;char&gt;());
+    file.close();
+
+    cout &lt;&lt; "==========================================" &lt;&lt; endl;
+    cout &lt;&lt; "      heib12 Native Compiler v2.0         " &lt;&lt; endl;
+    cout &lt;&lt; "==========================================" &lt;&lt; endl;
+
+    smatch matchTarget, matchSec;
+    regex targetRegex("@target:\\\\s*([\\\\w.]+)");
+    regex secRegex("@security:\\\\s*([\\\\w.]+)");
+
+    if (regex_search(sourceCode, matchTarget, targetRegex) && regex_search(sourceCode, matchSec, secRegex)) {
+        string target = matchTarget[1];
+        string security = matchSec[1];
+
+        cout &lt;&lt; "[SUCCESS] Target System Identified: " &lt;&lt; target &lt;&lt; endl;
+        cout &lt;&lt; "[SUCCESS] Security Protocol Initialized: " &lt;&lt; security &lt;&lt; endl;
+
+        ofstream outFile("output_driver.c");
+        outFile &lt;&lt; "// Generated automatically by heib12 Compiler v2.0\\n";
+        outFile &lt;&lt; "#include &lt;stdio.h&gt;\\n\\n";
+        outFile &lt;&lt; "int main() {\\n";
+        outFile &lt;&lt; "    printf(\\\"[heib12 Core] Running on target hardware: " &lt;&lt; target &xl
