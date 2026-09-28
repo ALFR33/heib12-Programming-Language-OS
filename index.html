@@ -114,7 +114,7 @@ event onPedestrianDetected(distance: Float64) {
             <div class="flex items-center justify-between border-b border-slate-800 pb-4">
                 <div>
                     <h2 class="text-2xl font-bold text-cyan-400">سورس كود المترجم الحقيقي الإصدار الثاني (C++ Native Compiler v2.0)</h2>
-                    <p class="text-slate-400 text-sm">هذا هو سورس كود المترجم المطور الذي يقوم بقراءة الملفات وتوليد وتشغيل الأنظمة المدمجة.</p>
+                    <p class="text-slate-400 text-sm">هذا هو سورس كود المترجم المطور الذي يدعم قراءة ملف main.h12 والتنفيذ المباشر.</p>
                 </div>
                 <button onclick="copyCompilerCode()" class="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm transition-all">
                     <i data-lucide="copy" class="w-4 h-4"></i> نسخ كود C++
@@ -136,7 +136,7 @@ int main(int argc, char* argv[]) {
     string filepath = (argc &gt;= 2) ? argv[1] : "main.h12";
     ifstream file(filepath);
     if (!file.is_open()) {
-        cerr &lt;&lt; "[ERROR] Could not open file: " &lt;&lt; filepath &lt;&lt; endl;
+        cerr &lt;&lt; "[ERROR] Could not open file: " &lt;&lt; filepath &lt;&lt; " (Make sure main.h12 file exists!)" &lt;&lt; endl;
         return 1;
     }
 
@@ -148,8 +148,8 @@ int main(int argc, char* argv[]) {
     cout &lt;&lt; "==========================================" &lt;&lt; endl;
 
     smatch matchTarget, matchSec;
-    regex targetRegex("@target:\\\\s*([\\\\w.]+)");
-    regex secRegex("@security:\\\\s*([\\\\w.]+)");
+    regex targetRegex(R"(@target:\\s*([\\w.]+))");
+    regex secRegex(R"(@security:\\s*([\\w.]+))");
 
     if (regex_search(sourceCode, matchTarget, targetRegex) && regex_search(sourceCode, matchSec, secRegex)) {
         string target = matchTarget[1];
@@ -213,6 +213,8 @@ int main(int argc, char* argv[]) {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col gap-1"><span class="font-mono text-cyan-400 font-bold">@target:</span><span class="text-sm text-slate-300">لتحديد العتاد المستهدف (سيارات، طائرات، سفن، بنوك...)</span></div>
                 <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col gap-1"><span class="font-mono text-cyan-400 font-bold">@security:</span><span class="text-sm text-slate-300">لتحديد نمط التشفير والأمان العالي للحماية من الاختراق</span></div>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col gap-1"><span class="font-mono text-cyan-400 font-bold">pulse</span><span class="text-sm text-slate-300">دالة فائقة السرعة للتنفيذ في الأجهزة والأنظمة الفورية (Real-time)</span></div>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col gap-1"><span class="font-mono text-cyan-400 font-bold">event</span><span class="text-sm text-slate-300">للاستماع للحساسات والأحداث الطارئة</span></div>
             </div>
         </div>
 
