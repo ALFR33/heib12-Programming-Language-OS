@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>heib12 OS & Language Studio</title>
+    <title>heib12 OS & Language Studio - Enterprise & Pricing</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -24,10 +24,16 @@
 
             <nav class="flex gap-2">
                 <button onclick="switchTab('playground')" id="btn-playground" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
-                    <i data-lucide="code" class="w-4 h-4"></i> محرر الكود (IDE)
+                    <i data-lucide="code" class="w-4 h-4"></i> المحرر (IDE)
+                </button>
+                <button onclick="switchTab('download')" id="btn-download" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
+                    <i data-lucide="download" class="w-4 h-4"></i> تنزيل وتوزيع المترجم
+                </button>
+                <button onclick="switchTab('pricing')" id="btn-pricing" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
+                    <i data-lucide="dollar-sign" class="w-4 h-4"></i> الأسعار والتراخيص التجارية
                 </button>
                 <button onclick="switchTab('compiler')" id="btn-compiler" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
-                    <i data-lucide="cpu" class="w-4 h-4"></i> سورس كود المترجم (C++)
+                    <i data-lucide="cpu" class="w-4 h-4"></i> سورس C++
                 </button>
                 <button onclick="switchTab('overview')" id="btn-overview" class="tab-btn flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
                     <i data-lucide="globe" class="w-4 h-4"></i> عن اللغة
@@ -66,10 +72,10 @@
             <div class="flex flex-wrap gap-2">
                 <span class="text-xs text-slate-400 flex items-center gap-1 font-medium my-auto">أنظمة جاهزة للتجربة:</span>
                 <button onclick="loadTemplate(0)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">🚗 السيارات الذكية</button>
-                <button onclick="loadTemplate(1)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">🚁 الطائرات والدرونز</button>
-                <button onclick="loadTemplate(2)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">🚢 أسطول السفن</button>
-                <button onclick="loadTemplate(3)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">💳 البنوك والفيزا</button>
-                <button onclick="loadTemplate(4)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">⚙️ ماكينات المصانع</button>
+                <button onclick="loadTemplate(1)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">🏎️ سيارة المستقبل GT-Zero</button>
+                <button onclick="loadTemplate(2)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">🚁 الطائرات والدرونز</button>
+                <button onclick="loadTemplate(3)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">🚢 أسطول السفن</button>
+                <button onclick="loadTemplate(4)" class="text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg transition-all">💳 البنوك والفيزا</button>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -109,12 +115,125 @@ event onPedestrianDetected(distance: Float64) {
             </div>
         </div>
 
+        <!-- Tab: Download -->
+        <div id="tab-download" class="tab-content hidden space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-2xl font-bold text-cyan-400">توزيع وتنزيل حزم heib12 المترجمة</h2>
+                <p class="text-slate-400 text-sm">حزم التثبيت الجاهزة للمطورين والشركات للعمل المباشر على الأجهزة والأنظمة المدمجة.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 p-6 rounded-2xl flex flex-col justify-between gap-4 transition-all shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-xs font-mono text-cyan-400 font-bold bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded">v2.0 Native Build</span>
+                            <span class="text-xs text-slate-500 font-mono">ملف C++</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-100">سورس كود المترجم C++</h3>
+                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">مترجم جاهز للعمل المباشر على أنظمة الويندوز والماك واللينكس بمكتبات C++ التلقائية.</p>
+                    </div>
+                    <button onclick="downloadFile(cppCompilerSourceText, 'heib12_compiler.cpp')" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl text-sm transition-all">
+                        <i data-lucide="download" class="w-4 h-4"></i> تحميل الملف (heib12_compiler.cpp)
+                    </button>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 p-6 rounded-2xl flex flex-col justify-between gap-4 transition-all shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-xs font-mono text-cyan-400 font-bold bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded">v2.0 Source</span>
+                            <span class="text-xs text-slate-500 font-mono">ملف h12</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-100">كود السيارة الافتراضي (main.h12)</h3>
+                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">الملف البرمجي الافتراضي للسيارة الذكية جاهز للتجميع والتشغيل الفوري.</p>
+                    </div>
+                    <button onclick="downloadFile(templatesData[0], 'main.h12')" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl text-sm transition-all">
+                        <i data-lucide="download" class="w-4 h-4"></i> تحميل الملف (main.h12)
+                    </button>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 p-6 rounded-2xl flex flex-col justify-between gap-4 transition-all shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-xs font-mono text-cyan-400 font-bold bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded">v2.0 Source</span>
+                            <span class="text-xs text-slate-500 font-mono">ملف h12</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-100">كود طائرة الدرون (drone.h12)</h3>
+                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">الملف البرمجي الافتراضي لطائرات الدرونز والأنظمة الجوية الجاهزة للعمل.</p>
+                    </div>
+                    <button onclick="downloadFile(templatesData[2], 'drone.h12')" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl text-sm transition-all">
+                        <i data-lucide="download" class="w-4 h-4"></i> تحميل الملف (drone.h12)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Pricing -->
+        <div id="tab-pricing" class="tab-content hidden space-y-6">
+            <div class="text-center max-w-2xl mx-auto py-4">
+                <h2 class="text-3xl font-extrabold text-cyan-400">التراخيص التجارية وخطط الاستثمار</h2>
+                <p class="text-slate-400 text-sm mt-2">اختر الخطة المناسبة لاستخدام heib12 في المشاريع التجارية والشركات.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Free Plan -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between gap-6 relative">
+                    <div>
+                        <span class="text-xs font-mono text-cyan-400 font-bold">Open Source</span>
+                        <h3 class="text-xl font-bold text-slate-100 mt-1">خطة المطورين والطلاب</h3>
+                        <div class="text-3xl font-extrabold text-cyan-400 my-4">مجاناً 100%</div>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> تنزيل المترجم C++ مجاناً</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> استخدام المحرر التفاعلي Web IDE</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> مستندات وأكواد تجريبية مفتوحة</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> دعم مجتمع GitHub</li>
+                        </ul>
+                    </div>
+                    <button onclick="switchTab('playground')" class="w-full py-3 rounded-xl font-bold text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 transition-all">بدء الاستخدام المجاني</button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="bg-slate-900 border border-cyan-500 shadow-xl shadow-cyan-500/10 p-6 rounded-2xl flex flex-col justify-between gap-6 relative">
+                    <span class="absolute -top-3 right-6 bg-cyan-500 text-slate-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-full flex items-center gap-1">
+                        <i data-lucide="sparkles" class="w-3 h-3"></i> الخيار الأكثر طلباً
+                    </span>
+                    <div>
+                        <span class="text-xs font-mono text-cyan-400 font-bold">Pro License</span>
+                        <h3 class="text-xl font-bold text-slate-100 mt-1">خطة الشركات والـ Pro</h3>
+                        <div class="text-3xl font-extrabold text-cyan-400 my-4">$29 <span class="text-xs text-slate-400 font-normal">/ شهرياً</span></div>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> تراخيص الاستخدام التجاري للسيارات والأنظمة</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> محاكي السيارات والدرونز ثلاثي الأبعاد</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> دعم الفحص التلقائي للثغرات والأمان</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> توليد ملفات Binary سريعة جداً</li>
+                        </ul>
+                    </div>
+                    <button onclick="openPayModal('خطة الشركات والـ Pro', '$29 / شهرياً')" class="w-full py-3 rounded-xl font-bold text-sm bg-cyan-500 hover:bg-cyan-400 text-slate-950 shadow-lg shadow-cyan-500/20 transition-all">اشترك الآن (Pro)</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between gap-6 relative">
+                    <div>
+                        <span class="text-xs font-mono text-cyan-400 font-bold">Enterprise Grade</span>
+                        <h3 class="text-xl font-bold text-slate-100 mt-1">خطة المصانع والمؤسسات</h3>
+                        <div class="text-3xl font-extrabold text-cyan-400 my-4">$299 <span class="text-xs text-slate-400 font-normal">/ شهرياً</span></div>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> ترخيص مفتوح لاستخدام heib12 بمنتجاتك</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> دعم تقني ومباشر على مدار الساعة (24/7)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> تخصيص المترجم لعتاد شركتك المخصص</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i> بروتوكول تشفير وتأمين خاص للشركات</li>
+                        </ul>
+                    </div>
+                    <button onclick="openPayModal('خطة المصانع والمؤسسات', '$299 / شهرياً')" class="w-full py-3 rounded-xl font-bold text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 transition-all">تواصل مع مبيعات الشركات</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Tab: Compiler -->
         <div id="tab-compiler" class="tab-content hidden space-y-6">
             <div class="flex items-center justify-between border-b border-slate-800 pb-4">
                 <div>
-                    <h2 class="text-2xl font-bold text-cyan-400">سورس كود المترجم الحقيقي الإصدار الثاني (C++ Native Compiler v2.0)</h2>
-                    <p class="text-slate-400 text-sm">هذا هو سورس كود المترجم المطور الذي يدعم قراءة ملف main.h12 والتنفيذ المباشر.</p>
+                    <h2 class="text-2xl font-bold text-cyan-400">سورس كود المترجم الحقيقي (C++ Native Compiler Source)</h2>
+                    <p class="text-slate-400 text-sm">هذا هو كود المترجم الذي يمكنك تشغيله على حاسوبك الشخصي أو أجهزة OnlineGDB لتجميع أكواد heib12.</p>
                 </div>
                 <button onclick="copyCompilerCode()" class="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm transition-all">
                     <i data-lucide="copy" class="w-4 h-4"></i> نسخ كود C++
@@ -136,7 +255,7 @@ int main(int argc, char* argv[]) {
     string filepath = (argc &gt;= 2) ? argv[1] : "main.h12";
     ifstream file(filepath);
     if (!file.is_open()) {
-        cerr &lt;&lt; "[ERROR] Could not open file: " &lt;&lt; filepath &lt;&lt; " (Make sure main.h12 file exists!)" &lt;&lt; endl;
+        cerr &lt;&lt; "[ERROR] Could not open file: " &lt;&lt; filepath &lt;&lt; endl;
         return 1;
     }
 
@@ -213,8 +332,6 @@ int main(int argc, char* argv[]) {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col gap-1"><span class="font-mono text-cyan-400 font-bold">@target:</span><span class="text-sm text-slate-300">لتحديد العتاد المستهدف (سيارات، طائرات، سفن، بنوك...)</span></div>
                 <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col gap-1"><span class="font-mono text-cyan-400 font-bold">@security:</span><span class="text-sm text-slate-300">لتحديد نمط التشفير والأمان العالي للحماية من الاختراق</span></div>
-                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col gap-1"><span class="font-mono text-cyan-400 font-bold">pulse</span><span class="text-sm text-slate-300">دالة فائقة السرعة للتنفيذ في الأجهزة والأنظمة الفورية (Real-time)</span></div>
-                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col gap-1"><span class="font-mono text-cyan-400 font-bold">event</span><span class="text-sm text-slate-300">للاستماع للحساسات والأحداث الطارئة</span></div>
             </div>
         </div>
 
@@ -232,21 +349,48 @@ int main(int argc, char* argv[]) {
 
     </main>
 
-    <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+    <!-- PayPal Modal -->
+    <div id="pay-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-md w-full shadow-2xl relative space-y-4">
+            <button onclick="closePayModal()" class="absolute top-4 left-4 text-slate-400 hover:text-slate-200 font-bold text-lg">✕</button>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold">P</div>
+                <div>
+                    <h3 class="font-bold text-lg text-slate-100">إتمام الاشتراك عبر PayPal</h3>
+                    <p id="modal-plan-info" class="text-xs text-slate-400">الخطة المختارة</p>
+                </div>
+            </div>
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2 text-center">
+                <span class="text-xs text-slate-400 block font-medium">بوابة الدفع الإلكتروني المشفرة والمحمية:</span>
+                <div class="inline-flex items-center gap-2 text-emerald-400 font-mono text-xs bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-lg">
+                    <i data-lucide="shield" class="w-4 h-4"></i> اتصل بموديل الدفع الآمن SSL 256-bit
+                </div>
+            </div>
+            <a id="paypal-link" href="#" target="_blank" class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/20 text-sm">
+                <i data-lucide="dollar-sign" class="w-4 h-4"></i> المتابعة إلى الدفع الآمن عبر PayPal
+            </a>
+            <p class="text-[10px] text-center text-slate-500">بعد إتمام التحويل عبر PayPal، سيتم تفعيل ترخيص المطورين أو الشركات تلقائياً على بريدك.</p>
+        </div>
+    </div>
+
+    <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500 space-y-1">
         <p>heib12 Universal System & Language Studio © 2026</p>
+        <p class="text-slate-400 font-mono">للتواصل والدعم الفني المباشر: <a href="mailto:alasod5550@gmail.com" class="text-cyan-400 hover:underline">alasod5550@gmail.com</a></p>
     </footer>
 
     <!-- JavaScript Controller -->
     <script>
         lucide.createIcons();
 
-        const templates = [
+        const templatesData = [
             `@target: autonomous.car\n@security: high.protection\n\ninitDriveSystem() {\n    sys.power(mode: ELECTRIC, battery: 95)\n    ai.think(mode: "self_drive")\n}\n\nevent onObstacle(distance: Float64) {\n    if (distance < 2.5) {\n        signal.brake(force: 100)\n        sys.notify(target: Driver, alert: "AUTO_BRAKE")\n    }\n}`,
+            `@target: heib12.gt_zero.car\n@security: quantum.military.v12\n\ninitDriveSystem() {\n    sys.power(mode: DUAL_ELECTRIC_MOTOR, battery: 100.0)\n    sys.setSpeedLimit(max: 320.0)\n    ai.loadModel(weights: "heib12_neural_autopilot_v2.bin")\n    nav.setDestination(city: "Riyadh", mode: AUTONOMOUS_HIGHWAY)\n}\n\npulse scanRoadEnvironment() {\n    val frontDistance = sensor.read("lidar_front_3d")\n    val currentSpeed = sys.getSpeed()\n    if (frontDistance > 100.0 && currentSpeed < 120.0) {\n        signal.throttle(acceleration: 15.0)\n    }\n}\n\nevent onObstacleDetected(distance: Float64, objectType: String) {\n    if (distance < 5.0) {\n        signal.brake(force: 100.0, abs: ENABLED)\n    }\n}`,
             `@target: avionics.drone\n@security: military.grade\n\npulse maintainFlight() {\n    val alt = sensor.read("altitude")\n    if (alt < 150.0) {\n        signal.thrust(power: 90)\n    }\n    ai.scanTerrain()\n}`,
             `@target: marine.fleet\n@security: naval.grade\n\npulse autoNavigate() {\n    val sonarDistance = sensor.read("sonar_front")\n    if (sonarDistance < 50.0) {\n        signal.steer(angle: -30)\n        sys.notify(target: Captain, alert: "REEF_AHEAD")\n    }\n}`,
-            `@target: fintech.pos\n@security: quantum.encrypted\n\npulse processPayment(amount: Money, cardToken: String) {\n    val isVerified = security.verifyHardware()\n    if (isVerified) {\n        fintech.authorize(token: cardToken)\n        sys.notify(target: BankServer, status: "TRANSACTION_SUCCESS")\n    }\n}`,
-            `@target: factory.automation\n@security: industrial.v5\n\nevent onOverheat(temp: Float64) {\n    if (temp > 85.0) {\n        signal.coolingSystem(power: 100)\n        sys.notify(target: Operator, alert: "COOLING_ACTIVE")\n    }\n}`
+            `@target: fintech.pos\n@security: quantum.encrypted\n\npulse processPayment(amount: Money, cardToken: String) {\n    val isVerified = security.verifyHardware()\n    if (isVerified) {\n        fintech.authorize(token: cardToken)\n        sys.notify(target: BankServer, status: "TRANSACTION_SUCCESS")\n    }\n}`
         ];
+
+        const cppCompilerSourceText = document.getElementById('cpp-source-box').innerText;
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
@@ -257,12 +401,14 @@ int main(int argc, char* argv[]) {
                 el.classList.add('text-slate-400');
             });
             const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.classList.remove('text-slate-400');
-            activeBtn.classList.add('bg-cyan-500/10', 'text-cyan-400', 'border', 'border-cyan-500/30');
+            if (activeBtn) {
+                activeBtn.classList.remove('text-slate-400');
+                activeBtn.classList.add('bg-cyan-500/10', 'text-cyan-400', 'border', 'border-cyan-500/30');
+            }
         }
 
         function loadTemplate(index) {
-            document.getElementById('code-editor').value = templates[index];
+            document.getElementById('code-editor').value = templatesData[index];
             document.getElementById('console-output').innerText = ">> تم تحميل النظام بنجاح. اضغط على تشغيل الكود...";
         }
 
@@ -306,9 +452,35 @@ System Output: BINARY EXECUTABLE READY (.EXE)
         }
 
         function copyCompilerCode() {
-            const code = document.getElementById('cpp-source-box').innerText;
-            navigator.clipboard.writeText(code);
-            alert("تم نسخ سورس كود المترجم الإصدار الثاني (C++) بنجاح!");
+            navigator.clipboard.writeText(cppCompilerSourceText);
+            alert("تم نسخ سورس كود المترجم (C++) بنجاح!");
+        }
+
+        function downloadFile(content, filename) {
+            const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        function openPayModal(planName, planPrice) {
+            document.getElementById('modal-plan-info').innerText = planName + " (" + planPrice + ")";
+            const amount = planPrice.replace(/[^0-9.]/g, '');
+            const paypalEmail = "aalhee34@gmail.com";
+            const payUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${paypalEmail}&item_name=${encodeURIComponent('heib12 License - ' + planName)}&currency_code=USD&amount=${amount}`;
+            document.getElementById('paypal-link').href = payUrl;
+            document.getElementById('pay-modal').classList.remove('hidden');
+            document.getElementById('pay-modal').classList.add('flex');
+        }
+
+        function closePayModal() {
+            document.getElementById('pay-modal').classList.remove('flex');
+            document.getElementById('pay-modal').classList.add('hidden');
         }
     </script>
 </body>
